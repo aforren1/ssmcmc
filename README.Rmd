@@ -35,9 +35,9 @@ set.seed(1)
 data_mean <- rowMeans(rotation, na.rm = TRUE)
 mcmc_sims <- replicate(n = 40,
                        expr = simulate_mcmc(optimal = c(rep(0, 8), rep(30, 72)), 
-                                            cost_width = 6,
-                                            forget_rate = 0.85,
-                                            proposal_variance = 4))
+                                            cost_width = 3,
+                                            forget_rate = 0.8,
+                                            proposal_variance = 8))
 ssm_sims <- replicate(n = 40,
                       expr = simulate_ssm(optimal = c(rep(0, 8), rep(30, 72)), 
                                           learn_rate = 0.15,

@@ -15,6 +15,8 @@ This is a basic example which shows you how to solve a common problem:
 
 ![](readme-figs/README-plot2-1.png)
 
+    #> Warning: Removed 6 rows containing non-finite values (stat_binhex).
+
 ![](readme-figs/README-unnamed-chunk-2-1.png)![](readme-figs/README-unnamed-chunk-2-2.png)
 
     #> Warning: Removed 101 rows containing non-finite values (stat_binhex).
