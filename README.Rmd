@@ -43,7 +43,7 @@ ssm_sims <- replicate(n = 40,
                                           execution_variance = 5))
 ```
 
-```{r plot1, fig.width = 8, fig.height = 6}
+```{r plot1, fig.width = 8, fig.height = 4}
 plot(data_mean, ylim = c(-10, 40))
 lines(rowMeans(mcmc_sims), col = 'red')
 lines(rowMeans(ssm_sims), col = 'blue')
