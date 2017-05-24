@@ -33,7 +33,7 @@ lines(rowMeans(mcmc_sims), col = 'red')
 lines(rowMeans(ssm_sims), col = 'blue')
 ```
 
-![](README-plot1-1.png)
+![](readme-figs/README-plot1-1.png)
 
 ``` r
 par(mfrow = c(3, 1))
@@ -43,7 +43,7 @@ matplot(mcmc_sims, type = 'l', ylim = c(-10, 40))
 matplot(ssm_sims, type = 'l', ylim = c(-10, 40))
 ```
 
-![](README-plot2-1.png)
+![](readme-figs/README-plot2-1.png)
 
 ``` r
 par(mfrow = c(1, 1))
@@ -57,17 +57,17 @@ long_data <- reshape2::melt(rotation)
 ggplot(long_mcmc, aes(x = Var1, y = value)) + stat_binhex(binwidth = c(2, 3)) + ylim(c(-20, 50))
 ```
 
-![](README-unnamed-chunk-2-1.png)
+![](readme-figs/README-unnamed-chunk-2-1.png)
 
 ``` r
 ggplot(long_ssm, aes(x = Var1, y = value)) + stat_binhex(binwidth = c(2, 3)) + ylim(c(-20, 50))
 ```
 
-![](README-unnamed-chunk-2-2.png)
+![](readme-figs/README-unnamed-chunk-2-2.png)
 
 ``` r
 ggplot(long_data, aes(x = obs, y = value)) + stat_binhex(binwidth = c(2, 3)) + ylim(c(-20, 50))
 #> Warning: Removed 101 rows containing non-finite values (stat_binhex).
 ```
 
-![](README-unnamed-chunk-2-3.png)
+![](readme-figs/README-unnamed-chunk-2-3.png)

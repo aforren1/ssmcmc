@@ -10,7 +10,8 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "readme-figs/README-",
+  results = 'hide'
 )
 library(ssmcmc)
 library(ggplot2)
