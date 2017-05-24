@@ -27,8 +27,8 @@ The goal of ssmcmc is to ...
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
-
+```{r simulate}
+set.seed(1)
 data_mean <- rowMeans(rotation, na.rm = TRUE)
 mcmc_sims <- replicate(n = 40,
                        expr = simulate_mcmc(optimal = c(rep(0, 8), rep(30, 72)), 
@@ -41,11 +41,16 @@ ssm_sims <- replicate(n = 40,
                                           forget_rate = 0.94,
                                           process_variance = 1,
                                           execution_variance = 5))
+```
 
+```{r plot1, fig.width = 8, fig.height = 10}
 plot(data_mean, ylim = c(-10, 40))
 lines(rowMeans(mcmc_sims), col = 'red')
 lines(rowMeans(ssm_sims), col = 'blue')
 
+```
+
+```{r plot2, fig.width = 6, fig.height = 10}
 par(mfrow = c(3, 1))
 
 matplot(rotation, type = 'l', ylim = c(-10, 40))

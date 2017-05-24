@@ -12,7 +12,7 @@ Example
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-
+set.seed(1)
 data_mean <- rowMeans(rotation, na.rm = TRUE)
 mcmc_sims <- replicate(n = 40,
                        expr = simulate_mcmc(optimal = c(rep(0, 8), rep(30, 72)), 
@@ -25,16 +25,17 @@ ssm_sims <- replicate(n = 40,
                                           forget_rate = 0.94,
                                           process_variance = 1,
                                           execution_variance = 5))
+```
 
+``` r
 plot(data_mean, ylim = c(-10, 40))
 lines(rowMeans(mcmc_sims), col = 'red')
 lines(rowMeans(ssm_sims), col = 'blue')
 ```
 
-![](README-example-1.png)
+![](README-plot1-1.png)
 
 ``` r
-
 par(mfrow = c(3, 1))
 
 matplot(rotation, type = 'l', ylim = c(-10, 40))
@@ -42,7 +43,7 @@ matplot(mcmc_sims, type = 'l', ylim = c(-10, 40))
 matplot(ssm_sims, type = 'l', ylim = c(-10, 40))
 ```
 
-![](README-example-2.png)
+![](README-plot2-1.png)
 
 ``` r
 par(mfrow = c(1, 1))
