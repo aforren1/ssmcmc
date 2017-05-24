@@ -9,7 +9,7 @@
 #' @param proposal_variance Width of the proposal distribution.
 #' 
 #' @examples
-#' optimal <- c(rep(0, 8), rep(30, 80))
+#' optimal <- c(rep(0, 8), rep(30, 72))
 #' sims <- simulate_mcmc(optimal = optimal, 
 #'                       cost_width = 5,
 #'                       forget_rate = 0.9,
@@ -30,7 +30,7 @@ simulate_mcmc <- function(optimal, cost_width, forget_rate, proposal_variance) {
 #' @param execution_variance Execution noise.
 #' 
 #' @examples
-#' optimal <- c(rep(0, 8), rep(30, 80))
+#' optimal <- c(rep(0, 8), rep(30, 72))
 #' sims <- simulate_ssm(optimal = optimal, 
 #'                      learn_rate = 0.15,
 #'                      forget_rate = 0.94,
