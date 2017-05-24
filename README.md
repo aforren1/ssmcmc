@@ -4,12 +4,10 @@
 ssmcmc
 ======
 
-The goal of ssmcmc is to ...
+Things to do: - Sampling from potential models? - Better vignette
 
 Example
 -------
-
-This is a basic example which shows you how to solve a common problem:
 
 ![](readme-figs/README-plot1-1.png)
 
