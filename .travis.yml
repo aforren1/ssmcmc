@@ -7,3 +7,5 @@ r:
   - oldrel
   - release
   - devel
+notifications:
+  email: false
