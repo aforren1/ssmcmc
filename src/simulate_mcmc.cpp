@@ -1,6 +1,10 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+double accept_ratio(double x, double cost_width) {
+    return pow(x/cost_width, 2.0);
+}
+
 //' Simulate an MCMC-based model for visuomotor rotation.
 //' 
 //' @param optimal A numeric vector containing the optimal reach direction.
@@ -28,7 +32,7 @@ NumericVector simulate_mcmc(NumericVector optimal, double cost_width,
     observed(0) = R::rnorm(0, proposal_variance);
     double sampled = observed(0);
     
-    double vc = pow(((observed(0) - optimal(0))/cost_width), 2.0);
+    double vc = accept_ratio(observed(0) - optimal(0), cost_width);
     
     for (int ii = 1; ii < n; ii++) {
         if (optimal(ii) != optimal(ii - 1)) {
@@ -36,7 +40,7 @@ NumericVector simulate_mcmc(NumericVector optimal, double cost_width,
         }
         
         observed(ii) = forget_rate * sampled + R::rnorm(0, proposal_variance);
-        metro = std::min(exp(-pow(((observed(ii) - optimal(ii))/cost_width), 2.0) + vc), 1.0);
+        metro = std::min(exp(-accept_ratio(observed(ii) - optimal(ii), cost_width) + vc), 1.0);
         if (R::runif(0, 1) < metro) {
             vc = pow(((observed(ii) - optimal(ii))/cost_width), 2.0);
             sampled = observed(ii);
