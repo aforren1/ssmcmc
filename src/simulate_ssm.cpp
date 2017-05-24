@@ -10,7 +10,7 @@ using namespace Rcpp;
 //' @param execution_variance Execution noise.
 //' 
 //' @examples
-//' optimal <- c(rep(0, 8), rep(30, 80))
+//' optimal <- c(rep(0, 8), rep(30, 72))
 //' sims <- simulate_ssm(optimal = optimal, 
 //'                      learn_rate = 0.15,
 //'                      forget_rate = 0.94,
@@ -41,7 +41,7 @@ NumericVector simulate_ssm(NumericVector optimal, double learn_rate,
 }
 
 /*** R
-simulate_ssm(optimal = c(rep(0, 8), rep(30, 80)), 
+simulate_ssm(optimal = c(rep(0, 8), rep(30, 72)), 
               learn_rate = 0.15,
               forget_rate = 0.94,
               process_variance = 1,

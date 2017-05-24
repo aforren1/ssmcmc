@@ -9,7 +9,7 @@ using namespace Rcpp;
 //' @param proposal_variance Width of the proposal distribution.
 //' 
 //' @examples
-//' optimal <- c(rep(0, 8), rep(30, 80))
+//' optimal <- c(rep(0, 8), rep(30, 72))
 //' sims <- simulate_mcmc(optimal = optimal, 
 //'                       cost_width = 5,
 //'                       forget_rate = 0.9,
@@ -46,7 +46,7 @@ NumericVector simulate_mcmc(NumericVector optimal, double cost_width,
 }
 
 /*** R
-simulate_mcmc(optimal = c(rep(0, 8), rep(30, 80)), 
+simulate_mcmc(optimal = c(rep(0, 8), rep(30, 72)), 
               cost_width = 5,
               forget_rate = 0.9,
               proposal_variance = 4.5)
