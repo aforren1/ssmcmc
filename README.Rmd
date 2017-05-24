@@ -43,14 +43,14 @@ ssm_sims <- replicate(n = 40,
                                           execution_variance = 5))
 ```
 
-```{r plot1, fig.width = 8, fig.height = 10}
+```{r plot1, fig.width = 8, fig.height = 6}
 plot(data_mean, ylim = c(-10, 40))
 lines(rowMeans(mcmc_sims), col = 'red')
 lines(rowMeans(ssm_sims), col = 'blue')
 
 ```
 
-```{r plot2, fig.width = 6, fig.height = 10}
+```{r plot2, fig.width = 8, fig.height = 10}
 par(mfrow = c(3, 1))
 
 matplot(rotation, type = 'l', ylim = c(-10, 40))
