@@ -1,0 +1,14 @@
+Package: ssmcmc
+Type: Package
+Title: Simulations for Comparison of SSMs and MCMC
+Version: 1.0
+Date: 2017-05-23
+Author: Alexander Forrence
+Maintainer: Alexander Forrence <aforren1@jhmi.edu>
+Description: Goes along with paper ...
+License: GPL (>= 2)
+Depends: R (>= 3.1.0)
+Imports: Rcpp (>= 0.12.11)
+LinkingTo: Rcpp
+LazyData: true
+RoxygenNote: 6.0.1
